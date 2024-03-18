@@ -11,7 +11,8 @@ namespace Module_5._Work_with_data
         {
             Console.WriteLine("Ćwiczenia z Json.");
 
-            string filepath = @"C:\Users\Ilka\Desktop\Kraje_Europy.txt";
+            //odczytanie pliku 
+            string filepath = @"C:\Users\Ilka\Desktop\Kraje Europy.txt";
 
             Console.WriteLine($"Ścieżka do pliku: {filepath}.");
 
@@ -29,6 +30,10 @@ namespace Module_5._Work_with_data
                         {
                             data.Add(line);
                         }
+                        data.Add("Grecja, Ateny");
+                        File.AppendAllLines(filepath, data);
+                        Console.WriteLine("Nowe dane zostały dopisane.");
+
                         string jsonData = JsonConvert.SerializeObject(data);
                         Console.WriteLine(jsonData);
                     }
@@ -50,7 +55,8 @@ namespace Module_5._Work_with_data
 
             Console.WriteLine("Ćwiczenia z Plik txt.");
 
-            string filepath1 = @"C:\Users\Ilka\Desktop\Kraje_Europy.txt"; 
+            //odczytanie pliku
+            string filepath1 = @"C:\Users\Ilka\Desktop\Kraje Europy.txt"; 
 
             if (File.Exists(filepath1))
             {
